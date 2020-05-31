@@ -11,8 +11,11 @@ def create_data():
 # with open('data.json', 'w') as fp:
 #     fp.write('[]')
 
-data_set = DataSet('data/data.json')
-data_set.graph_covid()
+data_set = DataSet('../data/data.json')
+data_set.write_graph_covid_video(all_data=True)
+data_set.write_graph_covid_video(all_data=False)
+data_set.write_graph_covid_png(all_data=True)
+data_set.write_graph_covid_png(all_data=False)
 # print(data_set)
 
 

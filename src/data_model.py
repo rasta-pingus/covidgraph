@@ -59,18 +59,19 @@ class DataSet:
             string += f"Mortes: {data['deaths']} \n"
         return string
 
-    def graph_covid(self):
+    def write_graph_covid_video(self, all_data=True):
         suspected = [x['suspected'] for x in self.data_set]
         discarded = [x['discarded'] for x in self.data_set]
         discarded_tested = [x['discarded_tested'] for x in self.data_set]
         confirmed = [x['confirmed'] for x in self.data_set]
-        # uti = [x['uti'] for x in self.data_set]
         healed = [x['healed'] for x in self.data_set]
         deaths = [x['deaths'] for x in self.data_set]
 
+        # uti = [x['uti'] for x in self.data_set]
         # uti_max = [5 for _ in self.data_set]
 
         notifications = [sum(x) for x in zip(suspected, discarded, confirmed)]
+        tests = [sum(x) for x in zip(confirmed, discarded_tested)]
 
         inbetween_confirmed = [x[0]-x[1]-x[2] for x in zip(confirmed, deaths, healed)]
 
@@ -82,44 +83,38 @@ class DataSet:
         ax.xaxis.set_major_formatter(formatter)
 
         locator = mdates.DayLocator(interval=7)
-        ax.xaxis.set_major_locator(locator)
-
-        ax.yaxis.set_major_locator(ticker.IndexLocator(base=5, offset=0))
-        ax.set_ylim(ymin=-0.5,auto=True)
-
-        ax.set_ylabel('Número total de casos', fontweight="bold", fontsize="14")
-        
+        ax.xaxis.set_major_locator(locator)        
 
         ax.set_xlim(x[0],x[-1])
         fig.suptitle('COVID Leopoldina')
 
         def init():
-            ax.plot(x[0],inbetween_confirmed[0], color='darkred')
-            ax.plot(x[0],confirmed[0], color='black', label='Total de casos')
-            ax.plot(x[0], deaths[0], color='black')
-            # ax.plot(x[0], uti[0], '--', label='Leitos UTI ocupados')
-            # ax.plot(x[0], uti_max[0], '--', color='red', label='Leitos UTI disponíveis')
-            legend2 = ax.legend(loc='upper left', shadow=False, fontsize='medium')
-            green_patch = mpatches.Patch(color='green', label='curados')
-            red_patch = mpatches.Patch(color='red', label='infectados')
-            black_patch = mpatches.Patch(color='black', label='mortos')
-            legend = ax.legend(handles=[green_patch, red_patch, black_patch], loc='center left')
+            green_patch = mpatches.Patch(color='green', label='Curados')
+            red_patch = mpatches.Patch(color='red', label='Infectados')
+            black_patch = mpatches.Patch(color='black', label='Mortes')
 
-            ax.add_artist(legend2)
+            if all_data:
+                line_confirmed, = ax.plot(x[0],tests[0], ':', color='black', label='Total de testes')
+            
+                yellow_patch = mpatches.Patch(color='lightyellow', label='Notificações')
+                blue_patch = mpatches.Patch(color='lightcyan', label='Testes Negativos')
+
+                legend = ax.legend(handles=[yellow_patch, line_confirmed, blue_patch, green_patch, red_patch, black_patch], loc='upper left')
+
+            else:
+                line_confirmed, = ax.plot(x[0],confirmed[0], color='black', label='Testes positivos')
+                
+                legend = ax.legend(handles=[line_confirmed, green_patch, red_patch, black_patch], loc='upper left')
 
         
         def animate(i):
-            # try:
-            #     if confirmed[i]>5:
-            #         ax.set_ylim(auto=True)
-            # except IndexError:
-            #         ax.set_ylim(auto=True)
-            # ax.plot(x[:i],inbetween_confirmed[:i], color='darkred')
-            ax.plot(x[:i],confirmed[:i], color='black', label='Total de casos')
-            # ax.plot(x[:i], deaths[:i], color='black')
-            # ax.plot(x[:i], uti[:i], '--', color='lightblue', label='Leitos UTI ocupados')
-            # ax.plot(x[:i], uti_max[:i], '--', color='red', label='Leitos UTI disponíveis')
-        
+            if all_data:
+                ax.plot(x[:i],tests[:i], ':', color='black')
+                ax.fill_between(x[:i],notifications[:i], color='lightyellow')
+                ax.fill_between(x[:i],tests[:i], color='lightcyan')
+            else:
+                ax.plot(x[:i],confirmed[:i], color='black')
+            
             ax.fill_between(x[:i],confirmed[:i], color='green')
             ax.fill_between(x[:i],inbetween_confirmed[:i], color='darkred')
             ax.fill_between(x[:i],deaths[:i], color='black')
@@ -129,50 +124,33 @@ class DataSet:
 
         dpi = 350
         writer = animation.writers['ffmpeg'](fps=10)
-        ani.save('data/covidgraph.mp4', writer=writer, dpi=dpi)
+
+        filepath = '../data/covid_graph'
+        filepath += '_all.mp4' if all_data else '.mp4'
+
+        ani.save(filepath, writer=writer, dpi=dpi)
         
 
         # plt.show()
 
 
-        # ax.plot(x,confirmed, color='black', label='Total de casos')
-        # ax.plot(x,inbetween_confirmed, color='darkred')
-        # ax.plot(x, deaths, color='black')
-        # ax.plot(x, uti, '--', label='Leitos UTI ocupados')
-        # ax.plot(x, uti_max, '--', color='red', label='Leitos UTI disponíveis')
 
-        # ax.fill_between(x,confirmed,alpha=0.5,color='green')
-        # ax.fill_between(x,inbetween_confirmed,alpha=0.5,color='red')
-        # ax.fill_between(x,deaths,alpha=1,color='black')
-        # ax.fill_between(x,uti,alpha=0.2,color='lightblue')
-
-        # green_patch = mpatches.Patch(color='green', label='curados')
-        # red_patch = mpatches.Patch(color='red', label='infectados')
-        # black_patch = mpatches.Patch(color='black', label='mortos')
-        # legend = ax.legend(handles=[green_patch, red_patch, black_patch], loc='center left')
-
-        # fig.suptitle('COVID leopoldina')
-        # legend2 = ax.legend(loc='upper left', shadow=False, fontsize='x-large')
-        # ax.add_artist(legend)
-
-        # ax.set_ylabel('Número total de casos', fontweight="bold", fontsize="14")
-
-        # plt.show()
     
-    def graph_covid2(self):
+    def write_graph_covid_png(self, all_data=True):
         suspected = [x['suspected'] for x in self.data_set]
         discarded = [x['discarded'] for x in self.data_set]
         discarded_tested = [x['discarded_tested'] for x in self.data_set]
         confirmed = [x['confirmed'] for x in self.data_set]
-        uti = [x['uti'] for x in self.data_set]
         healed = [x['healed'] for x in self.data_set]
         deaths = [x['deaths'] for x in self.data_set]
 
-        uti_max = [5 for _ in self.data_set]
+        # uti = [x['uti'] for x in self.data_set]
+        # uti_max = [5 for _ in self.data_set]
 
         notifications = [sum(x) for x in zip(suspected, discarded, confirmed)]
-
         tests = [sum(x) for x in zip(confirmed, discarded_tested)]
+
+        inbetween_confirmed = [x[0]-x[1]-x[2] for x in zip(confirmed, deaths, healed)]
 
         x = [datetime.strptime(x['date'],"%d %m %y").date() for x in self.data_set]
 
@@ -182,43 +160,33 @@ class DataSet:
         ax.xaxis.set_major_formatter(formatter)
 
         locator = mdates.DayLocator(interval=7)
-        ax.xaxis.set_major_locator(locator)
+        ax.xaxis.set_major_locator(locator)        
 
-        ax.set_xlim(x[0],x[-1])
         fig.suptitle('COVID Leopoldina')
 
-        def init():
-            ax.plot(x[0], notifications[0], color='black', label='Notificações')
-            ax.plot(x[0], tests[0], color='green', label='Testes realizados')
-            ax.plot(x[0], confirmed[0], color='darkred',label='Testes Positivos')
-            plt.legend(loc='upper left', shadow=False, fontsize='medium')
+        green_patch = mpatches.Patch(color='green', label='Curados')
+        red_patch = mpatches.Patch(color='red', label='Infectados')
+        black_patch = mpatches.Patch(color='black', label='Mortes')
 
+        if all_data:
+            line_confirmed, = ax.plot(x,tests, ':', color='black', label='Total de testes')
+            ax.fill_between(x,notifications, color='lightyellow')
+            ax.fill_between(x,tests, color='lightcyan')
+            yellow_patch = mpatches.Patch(color='lightyellow', label='Notificações')
+            blue_patch = mpatches.Patch(color='lightcyan', label='Testes Negativos')
 
-        def animate(i):
+            legend = ax.legend(handles=[yellow_patch, line_confirmed, blue_patch, green_patch, red_patch, black_patch], loc='upper left')
 
-            ax.plot(x[:i], notifications[:i], color='black', label='Notificações')
-            ax.plot(x[:i], tests[:i], color='green', label='Testes realizados')
-            ax.plot(x[:i], confirmed[:i], color='darkred',label='Testes Positivos') 
+        else:
+            line_confirmed, = ax.plot(x,confirmed, color='black', label='Testes positivos')
+            
+            legend = ax.legend(handles=[line_confirmed, green_patch, red_patch, black_patch], loc='upper left')
 
-            ax.fill_between(x[:i],notifications[:i],alpha=0.5,color='yellow')
-            ax.fill_between(x[:i],tests[:i],alpha=0.8,color='green')
-            ax.fill_between(x[:i],confirmed[:i],alpha=0.9,color='red')
+        ax.fill_between(x,confirmed, color='green')
+        ax.fill_between(x,inbetween_confirmed, color='darkred')
+        ax.fill_between(x,deaths, color='black')
 
-        ani = animation.FuncAnimation(
-            fig, animate, init_func=init, interval=20)
+        filepath = "../data/covid_graph"
+        filepath += '_all.png' if all_data else '.png'
 
-        ani.save('data/covidgraph2.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
-
-        # plt.show()
-
-# class Data:
-#     def __init__(self, **kwargs):
-#         self.date = kwargs.get('date')
-#         self.suspected = kwargs.get('suspected')
-#         self.discarded = kwargs.get('discarded')
-#         self.disarded_tested = kwargs.get('disarded_tested')
-#         self.confirmed = kwargs.get('confirmed')
-#         self.healed = kwargs.get('healed')
-#         self.deaths = kwargs.get('deaths')
-
-    
+        plt.savefig(filepath, dpi=300)

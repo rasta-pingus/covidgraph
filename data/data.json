@@ -1,0 +1,612 @@
+[
+    {
+        "date": "30 03 20",
+        "suspected": 79,
+        "discarded": 1,
+        "discarded_tested": 1,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "31 03 20",
+        "suspected": 92,
+        "discarded": 1,
+        "discarded_tested": 1,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "01 04 20",
+        "suspected": 101,
+        "discarded": 1,
+        "discarded_tested": 1,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "02 04 20",
+        "suspected": 92,
+        "discarded": 3,
+        "discarded_tested": 3,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "03 04 20",
+        "suspected": 92,
+        "discarded": 3,
+        "discarded_tested": 3,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "04 04 20",
+        "suspected": 93,
+        "discarded": 3,
+        "discarded_tested": 3,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "05 04 20",
+        "suspected": 93,
+        "discarded": 4,
+        "discarded_tested": 4,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "06 04 20",
+        "suspected": 90,
+        "discarded": 8,
+        "discarded_tested": 8,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "07 04 20",
+        "suspected": 91,
+        "discarded": 8,
+        "discarded_tested": 8,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "08 04 20",
+        "suspected": 100,
+        "discarded": 8,
+        "discarded_tested": 8,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "09 04 20",
+        "suspected": 101,
+        "discarded": 10,
+        "discarded_tested": 10,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "10 04 20",
+        "suspected": 106,
+        "discarded": 10,
+        "discarded_tested": 10,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "11 04 20",
+        "suspected": 108,
+        "discarded": 13,
+        "discarded_tested": 13,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "12 04 20",
+        "suspected": 111,
+        "discarded": 13,
+        "discarded_tested": 13,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "13 04 20",
+        "suspected": 116,
+        "discarded": 14,
+        "discarded_tested": 14,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "14 04 20",
+        "suspected": 118,
+        "discarded": 14,
+        "discarded_tested": 14,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "15 04 20",
+        "suspected": 121,
+        "discarded": 14,
+        "discarded_tested": 14,
+        "confirmed": 0,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "16 04 20",
+        "suspected": 123,
+        "discarded": 14,
+        "discarded_tested": 14,
+        "confirmed": 1,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "17 04 20",
+        "suspected": 125,
+        "discarded": 17,
+        "discarded_tested": 17,
+        "confirmed": 1,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "18 04 20",
+        "suspected": 125,
+        "discarded": 17,
+        "discarded_tested": 17,
+        "confirmed": 1,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "19 04 20",
+        "suspected": 125,
+        "discarded": 17,
+        "discarded_tested": 17,
+        "confirmed": 1,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "20 04 20",
+        "suspected": 127,
+        "discarded": 18,
+        "discarded_tested": 18,
+        "confirmed": 1,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "21 04 20",
+        "suspected": 128,
+        "discarded": 18,
+        "discarded_tested": 18,
+        "confirmed": 1,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "22 04 20",
+        "suspected": 126,
+        "discarded": 21,
+        "discarded_tested": 21,
+        "confirmed": 1,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "23 04 20",
+        "suspected": 131,
+        "discarded": 21,
+        "discarded_tested": 21,
+        "confirmed": 1,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "24 04 20",
+        "suspected": 132,
+        "discarded": 23,
+        "discarded_tested": 23,
+        "confirmed": 1,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "25 04 20",
+        "suspected": 131,
+        "discarded": 26,
+        "discarded_tested": 26,
+        "confirmed": 1,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "26 04 20",
+        "suspected": 131,
+        "discarded": 26,
+        "discarded_tested": 26,
+        "confirmed": 2,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "27 04 20",
+        "suspected": 133,
+        "discarded": 27,
+        "discarded_tested": 27,
+        "confirmed": 2,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "28 04 20",
+        "suspected": 141,
+        "discarded": 27,
+        "discarded_tested": 27,
+        "confirmed": 2,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "29 04 20",
+        "suspected": 148,
+        "discarded": 27,
+        "discarded_tested": 27,
+        "confirmed": 2,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "30 04 20",
+        "suspected": 148,
+        "discarded": 29,
+        "discarded_tested": 29,
+        "confirmed": 4,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "01 05 20",
+        "suspected": 151,
+        "discarded": 30,
+        "discarded_tested": 30,
+        "confirmed": 4,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "02 05 20",
+        "suspected": 153,
+        "discarded": 30,
+        "discarded_tested": 30,
+        "confirmed": 4,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "03 05 20",
+        "suspected": 158,
+        "discarded": 30,
+        "discarded_tested": 30,
+        "confirmed": 4,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "04 05 20",
+        "suspected": 172,
+        "discarded": 30,
+        "discarded_tested": 30,
+        "confirmed": 7,
+        "uti": 0,
+        "healed": 0,
+        "deaths": 0
+    },
+    {
+        "date": "05 05 20",
+        "suspected": 43,
+        "discarded": 164,
+        "discarded_tested": 32,
+        "confirmed": 7,
+        "uti": 0,
+        "healed": 2,
+        "deaths": 0
+    },
+    {
+        "date": "06 05 20",
+        "suspected": 35,
+        "discarded": 177,
+        "discarded_tested": 39,
+        "confirmed": 8,
+        "uti": 0,
+        "healed": 2,
+        "deaths": 0
+    },
+    {
+        "date": "07 05 20",
+        "suspected": 45,
+        "discarded": 177,
+        "discarded_tested": 39,
+        "confirmed": 9,
+        "uti": 0,
+        "healed": 2,
+        "deaths": 0
+    },
+    {
+        "date": "08 05 20",
+        "suspected": 41,
+        "discarded": 184,
+        "discarded_tested": 45,
+        "confirmed": 9,
+        "uti": 0,
+        "healed": 2,
+        "deaths": 0
+    },
+    {
+        "date": "09 05 20",
+        "suspected": 42,
+        "discarded": 185,
+        "discarded_tested": 46,
+        "confirmed": 9,
+        "uti": 0,
+        "healed": 2,
+        "deaths": 0
+    },
+    {
+        "date": "10 05 20",
+        "suspected": 44,
+        "discarded": 186,
+        "discarded_tested": 47,
+        "confirmed": 9,
+        "uti": 0,
+        "healed": 2,
+        "deaths": 0
+    },
+    {
+        "date": "11 05 20",
+        "suspected": 51,
+        "discarded": 192,
+        "discarded_tested": 49,
+        "confirmed": 10,
+        "uti": 0,
+        "healed": 2,
+        "deaths": 1
+    },
+    {
+        "date": "12 05 20",
+        "suspected": 61,
+        "discarded": 193,
+        "discarded_tested": 49,
+        "confirmed": 10,
+        "uti": 0,
+        "healed": 2,
+        "deaths": 1
+    },
+    {
+        "date": "13 05 20",
+        "suspected": 61,
+        "discarded": 204,
+        "discarded_tested": 58,
+        "confirmed": 10,
+        "uti": 0,
+        "healed": 5,
+        "deaths": 1
+    },
+    {
+        "date": "14 05 20",
+        "suspected": 65,
+        "discarded": 209,
+        "discarded_tested": 59,
+        "confirmed": 10,
+        "uti": 0,
+        "healed": 5,
+        "deaths": 1
+    },
+    {
+        "date": "15 05 20",
+        "suspected": 73,
+        "discarded": 213,
+        "discarded_tested": 59,
+        "confirmed": 12,
+        "uti": 0,
+        "healed": 5,
+        "deaths": 1
+    },
+    {
+        "date": "16 05 20",
+        "suspected": 68,
+        "discarded": 217,
+        "discarded_tested": 59,
+        "confirmed": 14,
+        "uti": 0,
+        "healed": 7,
+        "deaths": 1
+    },
+    {
+        "date": "17 05 20",
+        "suspected": 69,
+        "discarded": 217,
+        "discarded_tested": 59,
+        "confirmed": 15,
+        "uti": 0,
+        "healed": 7,
+        "deaths": 1
+    },
+    {
+        "date": "18 05 20",
+        "suspected": 67,
+        "discarded": 226,
+        "discarded_tested": 59,
+        "confirmed": 15,
+        "uti": 0,
+        "healed": 8,
+        "deaths": 1
+    },
+    {
+        "date": "19 05 20",
+        "suspected": 55,
+        "discarded": 244,
+        "discarded_tested": 64,
+        "confirmed": 15,
+        "uti": 0,
+        "healed": 9,
+        "deaths": 1
+    },
+    {
+        "date": "20 05 20",
+        "suspected": 60,
+        "discarded": 245,
+        "discarded_tested": 64,
+        "confirmed": 15,
+        "uti": 0,
+        "healed": 9,
+        "deaths": 1
+    },
+    {
+        "date": "21 05 20",
+        "suspected": 56,
+        "discarded": 252,
+        "discarded_tested": 66,
+        "confirmed": 17,
+        "uti": 0,
+        "healed": 9,
+        "deaths": 1
+    },
+    {
+        "date": "22 05 20",
+        "suspected": 64,
+        "discarded": 268,
+        "discarded_tested": 66,
+        "confirmed": 19,
+        "uti": 0,
+        "healed": 12,
+        "deaths": 1
+    },
+    {
+        "date": "23 05 20",
+        "suspected": 66,
+        "discarded": 268,
+        "discarded_tested": 66,
+        "confirmed": 19,
+        "uti": 0,
+        "healed": 13,
+        "deaths": 1
+    },
+    {
+        "date": "24 05 20",
+        "suspected": 68,
+        "discarded": 268,
+        "discarded_tested": 66,
+        "confirmed": 19,
+        "uti": 0,
+        "healed": 13,
+        "deaths": 1
+    },
+    {
+        "date": "25 05 20",
+        "suspected": 59,
+        "discarded": 288,
+        "discarded_tested": 66,
+        "confirmed": 20,
+        "uti": 2,
+        "healed": 13,
+        "deaths": 2
+    },
+    {
+        "date": "26 05 20",
+        "suspected": 53,
+        "discarded": 296,
+        "discarded_tested": 71,
+        "confirmed": 22,
+        "uti": 2,
+        "healed": 13,
+        "deaths": 2
+    },
+    {
+        "date": "27 05 20",
+        "suspected": 53,
+        "discarded": 303,
+        "discarded_tested": 71,
+        "confirmed": 23,
+        "uti": 2,
+        "healed": 13,
+        "deaths": 2
+    },
+    {
+        "date": "28 05 20",
+        "suspected": 60,
+        "discarded": 306,
+        "discarded_tested": 71,
+        "confirmed": 27,
+        "uti": 3,
+        "healed": 13,
+        "deaths": 2
+    },
+    {
+        "date": "29 05 20",
+        "suspected": 64,
+        "discarded": 313,
+        "discarded_tested": 71,
+        "confirmed": 31,
+        "uti": 4,
+        "healed": 13,
+        "deaths": 2
+    }
+]
