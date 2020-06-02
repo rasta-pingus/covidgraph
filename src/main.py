@@ -12,10 +12,10 @@ def create_data():
 #     fp.write('[]')
 
 data_set = DataSet('../data/data.json')
-data_set.write_graph_covid_video(all_data=True)
-data_set.write_graph_covid_video(all_data=False)
-data_set.write_graph_covid_png(all_data=True)
-data_set.write_graph_covid_png(all_data=False)
-# print(data_set)
+# data_set.write_graph_covid_video(all_data=True)
+# data_set.write_graph_covid_video(all_data=False)
+# data_set.write_graph_covid_png(all_data=True)
+# data_set.write_graph_covid_png(all_data=False)
+print(data_set)
 
 

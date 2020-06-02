@@ -10,6 +10,20 @@ import json
 
 class DataSet:
 
+    model = """ 
+    Dia: {data['date']} 
+    Suspeito: {data['suspected']} 
+    Descartado: {data['discarded']} 
+    Descartado por teste: {data['discarded_tested']}
+    Confirmado: {data['confirmed']}
+    Em UTI: {data['uti']}
+    Curado: {data['healed']}
+    Mortes: {data['deaths']}
+
+    notifications = suspected + discarded + confirmed
+    tests = confirmed + discarded_tested
+    """
+
     def __init__(self, file_str):
         self.file = file_str
         with open(self.file, 'r') as fp:
@@ -47,16 +61,9 @@ class DataSet:
         self.add_data(data_dict)
 
     def __str__(self):
-        string = ""
-        for data in self.data_set:
-            string += f"\nDia: {data['date']} \n"
-            string += f"Suspeito: {data['suspected']} \n"
-            string += f"Descartado: {data['discarded']} \n"
-            string += f"Descartado por teste: {data['discarded_tested']} \n"
-            string += f"Confirmado: {data['confirmed']} \n"
-            string += f"Em UTI: {data['uti']} \n"
-            string += f"Curado: {data['healed']} \n"
-            string += f"Mortes: {data['deaths']} \n"
+        string = DataSet.model
+        string += f'\n {len(self.data_set)} json data instances.'
+            
         return string
 
     def write_graph_covid_video(self, all_data=True):
@@ -115,8 +122,8 @@ class DataSet:
             else:
                 ax.plot(x[:i],confirmed[:i], color='black')
             
-            ax.fill_between(x[:i],confirmed[:i], color='green')
-            ax.fill_between(x[:i],inbetween_confirmed[:i], color='darkred')
+            ax.fill_between(x[:i],confirmed[:i], color='lightgreen')
+            ax.fill_between(x[:i],inbetween_confirmed[:i], color='indianred')
             ax.fill_between(x[:i],deaths[:i], color='black')
 
         ani = animation.FuncAnimation(
@@ -164,8 +171,8 @@ class DataSet:
 
         fig.suptitle('COVID Leopoldina')
 
-        green_patch = mpatches.Patch(color='green', label='Curados')
-        red_patch = mpatches.Patch(color='red', label='Infectados')
+        green_patch = mpatches.Patch(color='lightgreen', label='Curados')
+        red_patch = mpatches.Patch(color='indianred', label='Infectados')
         black_patch = mpatches.Patch(color='black', label='Mortes')
 
         if all_data:
@@ -182,8 +189,8 @@ class DataSet:
             
             legend = ax.legend(handles=[line_confirmed, green_patch, red_patch, black_patch], loc='upper left')
 
-        ax.fill_between(x,confirmed, color='green')
-        ax.fill_between(x,inbetween_confirmed, color='darkred')
+        ax.fill_between(x,confirmed, color='lightgreen')
+        ax.fill_between(x,inbetween_confirmed, color='indianred')
         ax.fill_between(x,deaths, color='black')
 
         filepath = "../data/covid_graph"
