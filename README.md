@@ -4,7 +4,7 @@ Graph generator for COVID data
 ![asciicast](man/demo.svg)
 
 Input data formated as:
-```json
+```
 {
     'date': date,
     'suspected': suspected,
