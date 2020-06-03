@@ -1,7 +1,12 @@
 # covidgraph
 Graph generator for COVID data
 
+## Basic setup
+
 ![asciicast](man/demo.svg)
+
+
+## Input data
 
 Input data formated as:
 ```
