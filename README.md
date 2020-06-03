@@ -5,6 +5,14 @@ Graph generator for COVID data
 
 ![asciicast](man/demo.svg)
 
+## Run
+
+Go to /covid/src and run:
+
+```bash
+python main.py
+```
+
 
 ## Input data
 
